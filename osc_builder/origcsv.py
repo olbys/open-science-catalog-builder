@@ -88,7 +88,7 @@ def load_orig_products(file: TextIO) -> List[Product]:
             region=line["Region"] or None,
             released=parse_released(line["Released"]),
             eo_missions=parse_list(line["EO_Missions"]),
-            keywords=parse_list(line["Keywords"]),
+            keywords=parse_list(line["Keywords"]) if "Keywords" in line else [],
             standard_name=line.get("Standard_Name")
         )
         for line in csv.DictReader(file)

@@ -69,9 +69,9 @@ def convert_csvs(
 
     # set root structure
     root = pystac.Catalog(
-        "osc",
+        "osc_hydro",
         "A catalog of publicly available geoscience products, datasets and resources developed in the frame of scientific research Projects funded by ESA EO (Earth Observation)",
-        "Open Science Catalog",
+        "4DHydro's Open Science Catalog",
     )
     projects_catalog = pystac.Catalog(
         "projects", "Activities funded by ESA", "Projects"
@@ -83,7 +83,7 @@ def convert_csvs(
     )
     themes_catalog = pystac.Catalog(
         "themes",
-        "Earth Science topics linked to the grand science challenges set in the ESA strategy",
+        "Earth Science topics related to hydrology",
         "Themes",
     )
     variables_catalog = pystac.Catalog(

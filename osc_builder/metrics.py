@@ -309,9 +309,10 @@ def caclulate_metrics(
             variable_info["years"] |= years
 
         for eo_mission_name in product_collection.extra_fields[MISSIONS_PROP]:
-            eo_mission_info = eo_mission_infos[eo_mission_name]
-            eo_mission_info["num_products"] += 1
-            eo_mission_info["years"] |= years
+            if eo_mission_infos.get(eo_mission_name):
+                eo_mission_info = eo_mission_infos[eo_mission_name]
+                eo_mission_info["num_products"] += 1
+                eo_mission_info["years"] |= years
 
     for variable_info in variable_infos.values():
         for theme_name in variable_info["themes"]:
